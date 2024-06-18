@@ -2,10 +2,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
+import Pratos from './views/Pratos.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: About }
+  { path: '/cardapio', component: Pratos }
 ]
 
 const router = createRouter({

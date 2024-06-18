@@ -1,11 +1,14 @@
-<template class="dark">
+<template class="dark ">
   <div id="app">
-    <button class="bg-[#1da1f2] text-white">
-      <router-link to="/">Home</router-link>
-    </button>
+    <div class="flex divide-x-2">
+        <router-link  to="/"><button class="hover:bg-violet-600 p-5 transition-all duration-300">Home</button></router-link>
       
-    <router-link to="/about">About</router-link>
-    <router-view />
+        <router-link to="/pratos"><button class="hover:bg-violet-600 p-5 transition-all duration-300">About</button></router-link>
+      
+    </div>
+    <div class="p-2">
+      <router-view />
+    </div>
   </div>
 </template>
 
