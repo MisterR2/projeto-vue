@@ -2,9 +2,15 @@
   <template v-if="!($route.name === 'Cardapio')">
     <div class="gap-4 flex flex-col">
       <div>
+        Prato:
         <select name="" id="" v-model="dish" class="border border-green-500 rounded w-100">
-            <option v-for="(option, index) in options" :key="index" :value="option">{{ option.name }} - {{ option.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) }} <br> 
-            </option>
+            <template v-if="options.length>0">
+              <option v-for="(option, index) in options" :key="index" :value="option">{{ option.name }} - {{ option.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) }} <br> 
+              </option>
+            </template>
+            <template v-else>
+              <option value="" disabled>Não há pratos cadastrados</option>
+            </template>
         </select>
       </div>
       
@@ -28,6 +34,7 @@
           <th class="border-collapse border border-slate-500">Prato</th>
           <th class="border-collapse border border-slate-500">Descrição</th>
           <th class="border-collapse border border-slate-500">Preço</th>
+          <th class="border-collapse border border-slate-500">Remover do cardápio</th>
         </tr>
       </thead>
       <tbody>
@@ -37,7 +44,8 @@
             <span v-if="dish.description">{{ dish.description }}</span>
             <span v-else>-</span>
           </td>
-          <td class="border-collapse border border-slate-500">{{ dish.price }}</td>
+          <td class="border-collapse border border-slate-500">{{ dish.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) }}</td>
+          <td class="border-collapse border border-slate-500"><button @click="removeItem(index)" class="ml-2 text-red-500 hover:text-red-700">Remove</button></td>
         </tr>
       </tbody>
     </table>
@@ -46,8 +54,8 @@
     <div v-if="menu" class="w-80 flex-col p-2 gap-4 container flex border border-green-500 rounded">
       <input type="string" placeholder="Nome" class="border border-green-500 rounded" v-model="newDish.name">
       <input type="number" placeholder="Preço" class="border border-green-500 rounded" v-model="newDish.price">
-      
-      <button @click="addDish" class="m-2 p-2 bg-green-500 text-white rounded-md disabled:bg-green-300">Adicionar Pedido</button>
+      <textarea name="" id="" placeholder="Descrição" class="border border-green-500 rounded" v-model="newDish.description"></textarea>
+      <button @click="addDish" class="m-2 p-2 bg-green-500 text-white rounded-md disabled:bg-green-300" :disabled="newDish.price<=0 || !newDish.name">Adicionar Prato</button>
     </div>
     </div>
   </template>
@@ -99,6 +107,9 @@ export default defineComponent({
         this.quantity-=1
       }
     },
+    removeDish(dishIndex: number) {
+        this.dishes.splice(dishIndex, 1);
+      },
     toggleMenu() {
         this.menu = !this.menu;
       },
@@ -124,6 +135,10 @@ export default defineComponent({
           name: "",
           price: 0,
         };
+      },
+      removeItem(index: number) {
+        this.dishes.splice(index, 1);
+        this.saveDishesToLocalStorage();
       },
   },
   mounted() {
