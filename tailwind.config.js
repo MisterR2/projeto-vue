@@ -7,7 +7,7 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   presets: [],
-  darkMode: ['selector', '[data-mode="dark"]'], // or 'class'
+  darkMode: 'media', // or 'class'
   theme: {
     extend: {
       fontFamily: {

@@ -1,9 +1,9 @@
 <template class="dark ">
   <div id="app">
     <div class="flex divide-x-2">
-        <router-link  to="/"><button class="hover:bg-violet-600 p-5 transition-all duration-300">Home</button></router-link>
+        <router-link  to="/"><button class="hover:bg-violet-600 p-5 transition-all duration-300">Início</button></router-link>
       
-        <router-link to="/pratos"><button class="hover:bg-violet-600 p-5 transition-all duration-300">About</button></router-link>
+        <router-link to="/cardapio"><button class="hover:bg-violet-600 p-5 transition-all duration-300">Cardápio</button></router-link>
       
     </div>
     <div class="p-2">
