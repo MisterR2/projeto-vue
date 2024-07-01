@@ -1,7 +1,7 @@
 <!-- src/views/About.vue -->
 <template>
   <div class="gap-4">
-    <h1 class="text-3xl font-bold font-sans">Comandas</h1>
+    <h1 class="text-3xl font-bold font-sans">Gestão de pedidos</h1>
     <div class="flex flex-row p-3 gap-x-2">
       <div class="border border rounded border-green-900 p-4 flex flex-col text-center" v-for="comanda in filteredComandas" :key="comanda.mesa">
         <h2 class="text-2l font-bold font-sans">Mesa {{ comanda.mesa }}</h2>
@@ -11,12 +11,12 @@
             <td class="border-collapse border border-slate-500 p-1">{{ dish.quantity }}</td>
           </tr>
         </table>
+        Status:
         <select name="" @change="saveOrdersToLocalStorage" id="" v-model="comanda.status" class="border border-green-500 rounded">
           <option value="Recebido" selected>Recebido</option>
           <option value="Em preparo">Em preparo</option>
           <option value="Entregue">Entregue</option>
         </select>
-        <button @click="saveOrdersToLocalStorage" class="m-2 p-2 bg-green-500 text-white rounded-md disabled:bg-green-300">Atualizar Pedido</button>
       </div>
     </div>
     <span v-if="filteredComandas.length==0">Não há comandas cadastradas</span>

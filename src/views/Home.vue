@@ -1,5 +1,5 @@
 <template>
-  <div class="gap-4">
+  <div>
     <h1 class="text-3xl font-bold font-sans">Suas comandas</h1>
     <Comanda></Comanda>
   </div>

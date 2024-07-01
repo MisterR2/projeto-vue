@@ -49,7 +49,7 @@
         </tr>
       </tbody>
     </table>
-    <p v-else>Não há items no cardápio</p>
+    <p class="my-5" v-else>Não há items no cardápio</p>
     <button class="p-2 bg-green-500 text-white rounded-md my-5" @click="toggleMenu">Novo prato</button>
     <div v-if="menu" class="w-80 flex-col p-2 gap-4 container flex border border-green-500 rounded">
       <input type="string" placeholder="Nome" class="border border-green-500 rounded" v-model="newDish.name">

@@ -6,11 +6,11 @@ import Cozinha from './views/Cozinha.vue'
 
 const routes = [
   { 
-    path: '/', 
+    path: '/pedidos', 
     component: Home,
   },
   { 
-    path: '/cardapio', 
+    path: '/', 
     component: Pratos, 
     name: "Cardapio",
   },
