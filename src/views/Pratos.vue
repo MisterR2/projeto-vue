@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <button @click="emitSelection" :disabled="!dish" class="ml-2 p-2 bg-green-500 text-white rounded-md disabled:bg-green-300">Add</button>
+    <button @click="emitSelection" :disabled="!dish" class="ml-2 p-2 bg-green-500 text-white rounded-md disabled:bg-green-300">Inserir</button>
   </template>
   <template v-else>
     <div>
@@ -45,7 +45,7 @@
             <span v-else>-</span>
           </td>
           <td class="border-collapse border border-slate-500">{{ dish.price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) }}</td>
-          <td class="border-collapse border border-slate-500"><button @click="removeItem(index)" class="ml-2 text-red-500 hover:text-red-700">Remove</button></td>
+          <td class="border-collapse border border-slate-500"><button @click="removeItem(index)" class="ml-2 text-red-500 hover:text-red-700">Remover</button></td>
         </tr>
       </tbody>
     </table>

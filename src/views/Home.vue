@@ -9,16 +9,7 @@
   import { defineComponent } from 'vue';
   import Comanda from "./Comanda.vue";
   import Pratos from "./Pratos.vue";
-
-  interface Prato {
-    name: string;
-    price: number;
-    quantity: number;
-    description?: string;
-  }
-
   
-
   export default defineComponent({
     name: 'Home',
     components: { Comanda, Pratos },

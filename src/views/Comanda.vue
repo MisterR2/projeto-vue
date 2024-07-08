@@ -20,7 +20,7 @@
         </ul></td>
       <td class="border-collapse border border-slate-500">{{ item.status }}</td>
       <td class="border-collapse border border-slate-500">{{ item.total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}) }}</td>
-      <td class="border-collapse border border-slate-500 p-2"><button @click="removeItem(index)" class="ml-2 bg-red-600 hover:bg-red-800  rounded-full p-1">X</button></td>
+      <td class="border-collapse border border-slate-500 p-2"><button @click="removeItem(index)" class="bg-red-600 hover:bg-red-800  rounded-full p-1">X</button></td>
     </tr>
   </tbody>
 </table>
